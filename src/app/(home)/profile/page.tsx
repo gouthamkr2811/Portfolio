@@ -40,7 +40,7 @@ const Page: React.FC = () => {
             });
     }, []);
 
-    const Card = ({ title, content }: any) => {
+    const Card = ({ title, content }:{title?:string ,content?:string}) => {
         const [isHovered, setIsHovered] = useState(false);
 
         return (
@@ -95,7 +95,7 @@ const Page: React.FC = () => {
                     <div className="mt-[20px] ml-[20px]">
                         <h1 className="text-5xl font-bold oswald">
                             <span className="text-[#18181D] mr-3 oswald">
-                                <span className="text-green-400 animate-pulse">I'm</span>
+                                <span className="text-green-400 animate-pulse">I&apos;m</span>
                             </span>
                             Goutham
                         </h1>
