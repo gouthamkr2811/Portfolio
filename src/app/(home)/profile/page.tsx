@@ -19,7 +19,7 @@ interface AnimationData {
     h: number;
 }
 
-const Page: React.FC = () => {
+const Profile: React.FC = () => {
     const [animationData, setAnimationData] = useState<AnimationData | null>(null);
     const [animationData2, setAnimationData2] = useState<AnimationData | null>(null);
 
@@ -170,4 +170,4 @@ const Page: React.FC = () => {
     );
 };
 
-export default Page;
+export default Profile;
