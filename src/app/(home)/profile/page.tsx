@@ -1,82 +1,80 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import Header from "../_components/Header";
 import { Button } from "@/components/ui/button";
-import Image from 'next/image';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { LottieComponentProps } from 'lottie-react';
+// import dynamic from 'next/dynamic';
+// import { LottieComponentProps } from 'lottie-react';
 
-const LottieComponent = dynamic<LottieComponentProps>(() => import('lottie-react'), { ssr: false });
+// const LottieComponent = dynamic<LottieComponentProps>(() => import('lottie-react'), { ssr: false });
 
-interface AnimationData {
-    v: string;
-    fr: number;
-    ip: number;
-    op: number;
-    w: number;
-    h: number;
-}
+// interface AnimationData {
+//     v: string;
+//     fr: number;
+//     ip: number;
+//     op: number;
+//     w: number;
+//     h: number;
+// }
 
 const Profile: React.FC = () => {
-    const [animationData, setAnimationData] = useState<AnimationData | null>(null);
-    const [animationData2, setAnimationData2] = useState<AnimationData | null>(null);
+    // const [animationData, setAnimationData] = useState<AnimationData | null>(null);
+    // const [animationData2, setAnimationData2] = useState<AnimationData | null>(null);
 
-    useEffect(() => {
-        import("../../../../public/asset/animation/Animation - 1726741325931.json")
-            .then((data: AnimationData) => {
-                setAnimationData(data);
-            })
-            .catch((err) => {
-                console.error("Error loading animation data:", err);
-            });
-        import("../../../../public/asset/animation/Animation - 1726750191202.json")
-            .then((data: AnimationData) => {
-                setAnimationData2(data);
-            })
-            .catch((err) => {
-                console.error("Error loading animation data:", err);
-            });
-    }, []);
+    // useEffect(() => {
+    //     import("../../../../public/asset/animation/Animation - 1726741325931.json")
+    //         .then((data: AnimationData) => {
+    //             setAnimationData(data);
+    //         })
+    //         .catch((err) => {
+    //             console.error("Error loading animation data:", err);
+    //         });
+    //     import("../../../../public/asset/animation/Animation - 1726750191202.json")
+    //         .then((data: AnimationData) => {
+    //             setAnimationData2(data);
+    //         })
+    //         .catch((err) => {
+    //             console.error("Error loading animation data:", err);
+    //         });
+    // }, []);
 
-    const Card = ({ title, content }:{title?:string ,content?:string}) => {
-        const [isHovered, setIsHovered] = useState(false);
+    // const Card = ({ title, content }:{title?:string ,content?:string}) => {
+    //     const [isHovered, setIsHovered] = useState(false);
 
-        return (
-            <div className="gap-3 pt-[7%] mt-[24px] px-4 sm:px-6 md:px-8">
-                <Link href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
-                    <div
-                        className={`
-                            flex flex-col md:flex-row border border-solid border-[#383737] 
-                            w-full max-w-[800px] mx-auto rounded-[20px] 
-                            h-auto md:h-[340px] p-6 md:pt-[20px]
-                            transition-all duration-300 ease-in-out
-                            ${isHovered ?
-                                'bg-[#1e1d1d] scale-105 shadow-lg md:rotate-1' :
-                                'bg-[#1615159c] shadow-md'
-                            }
-                        `}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                    >
-                        <div className="w-full md:ml-[40px] md:mt-[25px]">
-                            <div className="w-[50px] h-[50px]">
-                                {animationData && <LottieComponent animationData={animationData} />}
-                            </div>
-                            <h1 className="text-[20px] md:text-[25px] oswald">{title}</h1>
-                            <h5 className="green-wave-text text-[12px] md:text-[13px] w-full md:w-[422px] mt-[12px] oswald">{content}</h5>
-                        </div>
-                        <div className="relative w-full md:w-auto mt-4 md:mt-0">
-                            <div className="w-full md:w-[270px] h-[100px] md:absolute md:right-[250px] md:top-[750px]">
-                                {animationData2 && <LottieComponent animationData={animationData2} />}
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-        );
-    };
+    //     return (
+    //         <div className="gap-3 pt-[7%] mt-[24px] px-4 sm:px-6 md:px-8">
+    //             <Link href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
+    //                 <div
+    //                     className={`
+    //                         flex flex-col md:flex-row border border-solid border-[#383737] 
+    //                         w-full max-w-[800px] mx-auto rounded-[20px] 
+    //                         h-auto md:h-[340px] p-6 md:pt-[20px]
+    //                         transition-all duration-300 ease-in-out
+    //                         ${isHovered ?
+    //                             'bg-[#1e1d1d] scale-105 shadow-lg md:rotate-1' :
+    //                             'bg-[#1615159c] shadow-md'
+    //                         }
+    //                     `}
+    //                     onMouseEnter={() => setIsHovered(true)}
+    //                     onMouseLeave={() => setIsHovered(false)}
+    //                 >
+    //                     <div className="w-full md:ml-[40px] md:mt-[25px]">
+    //                         <div className="w-[50px] h-[50px]">
+    //                             {animationData && <LottieComponent animationData={animationData} />}
+    //                         </div>
+    //                         <h1 className="text-[20px] md:text-[25px] oswald">{title}</h1>
+    //                         <h5 className="green-wave-text text-[12px] md:text-[13px] w-full md:w-[422px] mt-[12px] oswald">{content}</h5>
+    //                     </div>
+    //                     <div className="relative w-full md:w-auto mt-4 md:mt-0">
+    //                         <div className="w-full md:w-[270px] h-[100px] md:absolute md:right-[250px] md:top-[750px]">
+    //                             {animationData2 && <LottieComponent animationData={animationData2} />}
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </Link>
+    //         </div>
+    //     );
+    // };
 
     return (
         <div className="relative overflow-hidden">
