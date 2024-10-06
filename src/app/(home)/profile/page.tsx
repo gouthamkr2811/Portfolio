@@ -98,8 +98,14 @@ const Profile: React.FC = () => {
                             Goutham
                         </h1>
                         <h5 className="green-wave-text mt-[25px] w-full md:w-[58%] text-sm md:text-base oswald">
-                            A full-stack developer bridges design and functionality,
-                            blending frontend creativity with backend precision.
+                            A full-stack developer excels in both frontend and
+                            backend technologies, bridging design and functionality.
+                            They create engaging user interfaces while managing server-side
+                            logic and databases. With expertise in various
+                            programming languages and frameworks, these versatile
+                            professionals oversee entire web development projects,
+                            from concept to deployment, effectively combining creativity with technical precision to deliver
+                            comprehensive digital solutions.
                         </h5>
                         <div className="mt-7 flex flex-col sm:flex-row gap-4">
                             <Button
