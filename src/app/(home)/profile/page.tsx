@@ -44,29 +44,31 @@ const Profile: React.FC = () => {
         const [isHovered, setIsHovered] = useState(false);
 
         return (
-            <div className="gap-3 pt-[7%] mt-[24px]">
+            <div className="gap-3 pt-[7%] mt-[24px] px-4 sm:px-6 md:px-8">
                 <Link href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
                     <div
                         className={`
-                            flex border border-solid border-[#383737] w-[800px] rounded-[20px] h-[340px] pt-[20px]
+                            flex flex-col md:flex-row border border-solid border-[#383737] 
+                            w-full max-w-[800px] mx-auto rounded-[20px] 
+                            h-auto md:h-[340px] p-6 md:pt-[20px]
                             transition-all duration-300 ease-in-out
                             ${isHovered ?
-                                'bg-[#1e1d1d] scale-105 shadow-lg rotate-1' :
+                                'bg-[#1e1d1d] scale-105 shadow-lg md:rotate-1' :
                                 'bg-[#1615159c] shadow-md'
                             }
                         `}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                        <div className="ml-[40px] mt-[25px]">
+                        <div className="w-full md:ml-[40px] md:mt-[25px]">
                             <div className="w-[50px] h-[50px]">
                                 {animationData && <LottieComponent animationData={animationData} />}
                             </div>
-                            <h1 className="text-[25px] oswald">{title}</h1>
-                            <h5 className="green-wave-text text-[13px] w-[422px] mt-[12px] oswald">{content}</h5>
+                            <h1 className="text-[20px] md:text-[25px] oswald">{title}</h1>
+                            <h5 className="green-wave-text text-[12px] md:text-[13px] w-full md:w-[422px] mt-[12px] oswald">{content}</h5>
                         </div>
-                        <div>
-                            <div className="w-[270px] h-[100px] absolute right-[250px] top-[750px] [&:nth-child(2)]:top-[755px]">
+                        <div className="relative w-full md:w-auto mt-4 md:mt-0">
+                            <div className="w-full md:w-[270px] h-[100px] md:absolute md:right-[250px] md:top-[750px]">
                                 {animationData2 && <LottieComponent animationData={animationData2} />}
                             </div>
                         </div>
@@ -75,8 +77,6 @@ const Profile: React.FC = () => {
             </div>
         );
     };
-
-        
 
     return (
         <div className="relative overflow-hidden">
@@ -90,29 +90,29 @@ const Profile: React.FC = () => {
                     <source src="/asset/background_video/video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <section className="relative z-10 w-full p-8 ml-10">
+                <section className="relative z-10 w-full p-4 md:p-8 md:ml-10">
                     <Header />
-                    <div className="mt-[20px] ml-[20px]">
-                        <h1 className="text-5xl font-bold oswald">
+                    <div className="mt-[20px] mx-4 md:ml-[20px]">
+                        <h1 className="text-3xl md:text-5xl font-bold oswald">
                             <span className="text-[#18181D] mr-3 oswald">
                                 <span className="text-green-400 animate-pulse">I&apos;m</span>
                             </span>
                             Goutham
                         </h1>
-                        <h5 className="green-wave-text mt-[25px] w-[58%] oswald">
+                        <h5 className="green-wave-text mt-[25px] w-full md:w-[58%] text-sm md:text-base oswald">
                             A full-stack developer bridges design and functionality,
                             blending frontend creativity with backend precision.
                         </h5>
-                        <div className="mt-7 ">
+                        <div className="mt-7 flex flex-col sm:flex-row gap-4">
                             <Button
                                 variant="outline"
-                                className="mr-4 border-gray-300 hover:bg-green-400 text-white transition-colors duration-200 oswald"
+                                className="w-full sm:w-auto border-gray-300 hover:bg-green-400 text-white transition-colors duration-200 oswald"
                             >
                                 See my resume
                             </Button>
                             <Button
                                 variant="outline"
-                                className="border-gray-300 hover:bg-green-400 text-white transition-colors duration-200 oswald"
+                                className="w-full sm:w-auto border-gray-300 hover:bg-green-400 text-white transition-colors duration-200 oswald"
                             >
                                 Get in touch
                             </Button>
@@ -121,7 +121,7 @@ const Profile: React.FC = () => {
                 </section>
             </section>
 
-            <section className="ml-[230px]">
+            {/* <section className="w-full px-4 md:px-0 md:ml-[230px]">
                 <Card
                     title="About me"
                     content="A skilled full-stack developer with expertise in backend development, front-end engineering, and UI/UX design, you excel at building scalable applications."
@@ -134,38 +134,37 @@ const Profile: React.FC = () => {
                     title="My Projects"
                     content="Developed various full-stack applications, including an e-commerce platform with real-time inventory management."
                 />
-            </section>
+            </section> */}
 
-            <div className="mt-[150px]">
+            {/* <div className="mt-[150px]">
                 <hr />
-            </div>
+            </div> */}
 
-            <section className="h-[180px]">
-                <div className="flex justify-between">
-                    <div className="ml-[100px] mt-[25px]">
-                        <h1 className="mr-6">
+            {/* <section className="min-h-[180px] px-4 py-8">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                    <div className="text-center md:text-left md:ml-[100px]">
+                        <h1 className="mb-4 md:mr-6">
                             <Image
                                 src="/asset/images/portfolio.png"
                                 alt="Logo"
-                                className="w-40 h-16"
+                                className="w-32 md:w-40 h-12 md:h-16 mx-auto md:mx-0"
                                 width={100}
                                 height={100}
                             />
                         </h1>
                         <h6 className="mt-[10px] oswald">Thank you for visiting</h6>
                     </div>
-                    <div className="mr-[100px] mt-[20px]">
-                        <ul className="oswald">
-                            <li className="mr-6"><Link href="/About">About</Link></li>
-                            <li className="mr-6"><Link href="/Work">Work</Link></li>
-                            <li className="mr-6"><Link href="/Notebook">Notebook</Link></li>
-                            <li className="mr-6"><Link href="/Contact">Contact</Link></li>
+                    <div className="mt-6 md:mt-0 md:mr-[100px]">
+                        <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-6 oswald">
+                            <li><Link href="/About">About</Link></li>
+                            <li><Link href="/Work">Work</Link></li>
+                            <li><Link href="/Notebook">Notebook</Link></li>
+                            <li><Link href="/Contact">Contact</Link></li>
                             <li><Link href="/More">More</Link></li>
                         </ul>
                     </div>
                 </div>
-            </section>
-
+            </section> */}
         </div>
     );
 };
